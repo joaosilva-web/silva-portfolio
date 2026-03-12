@@ -313,6 +313,11 @@
     margin: 0;
   }
 
+  .arrowLeft:hover,
+  .arrowRight:hover {
+    transform: translateY(-50%);
+  }
+
   .arrowLeft {
     left: 8px;
   }
