@@ -1,4 +1,6 @@
-import tolivreImg from "../assets/mockup.png";
+import img from "../assets/mockup.png";
+import tolivreImg from "../assets/mockup-tolivre.png";
+import flashLearnImg from "../assets/mockup-flashlearn.png";
 
 export interface Project {
   title: string;
@@ -33,15 +35,6 @@ export const projects: Project[] = [
     link: "https://flashlearn.app",
     github: "https://github.com/",
     stack: ["TypeScript", "Next.js", "Supabase", "Tailwind CSS"],
-    mockup: tolivreImg,
-  },
-  {
-    title: "Project Three",
-    description:
-      "A short description of the third project goes here, showcasing the work and technology involved.",
-    link: "#",
-    github: "https://github.com/",
-    stack: ["Next.js", "Tailwind CSS"],
-    mockup: tolivreImg,
+    mockup: flashLearnImg,
   },
 ];
