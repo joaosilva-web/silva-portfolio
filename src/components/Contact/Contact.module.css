@@ -1,0 +1,143 @@
+.contact {
+  width: 100%;
+  background-color: #1c46f5;
+  padding: 80px 0 100px;
+}
+
+.inner {
+  margin: 0 64px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 64px;
+}
+
+/* ── Text block ────────────────────────────────── */
+.textBlock {
+  flex: 1;
+}
+
+.textBlock h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: clamp(48px, 7vw, 100px);
+  color: white;
+  line-height: 0.95;
+  margin-bottom: 24px;
+}
+
+.apostrophe {
+  color: #acec00;
+}
+
+.highlight {
+  color: #acec00;
+}
+
+.subtitle {
+  font-family: "Playfair Display", serif;
+  font-weight: 300;
+  font-size: clamp(16px, 1.6vw, 22px);
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 400px;
+  line-height: 1.7;
+}
+
+.subtitle em {
+  font-style: italic;
+  color: white;
+}
+
+/* ── Links ─────────────────────────────────────── */
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.linkItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-decoration: none;
+  padding: 20px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  min-width: 300px;
+  transition:
+    border-color 0.2s,
+    background-color 0.2s;
+}
+
+.linkItem:hover {
+  border-color: #acec00;
+  background-color: rgba(172, 236, 0, 0.05);
+}
+
+.linkLabel {
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #acec00;
+}
+
+.linkValue {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(15px, 1.4vw, 18px);
+  font-weight: 400;
+  color: white;
+}
+
+/* ── 1024px ──────────────────────────────────── */
+@media (max-width: 1024px) {
+  .inner {
+    margin: 0 40px;
+    gap: 40px;
+  }
+
+  .linkItem {
+    min-width: 240px;
+  }
+}
+
+/* ── 768px ──────────────────────────────────── */
+@media (max-width: 768px) {
+  .contact {
+    padding: 60px 0 80px;
+  }
+
+  .inner {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 28px;
+    gap: 40px;
+  }
+
+  .linkItem {
+    min-width: 100%;
+    width: 100%;
+  }
+
+  .links {
+    width: 100%;
+  }
+}
+
+/* ── 480px ──────────────────────────────────── */
+@media (max-width: 480px) {
+  .contact {
+    padding: 40px 0 60px;
+  }
+
+  .inner {
+    margin: 0 16px;
+    gap: 32px;
+  }
+
+  .linkItem {
+    padding: 16px 20px;
+  }
+}

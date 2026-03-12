@@ -1,0 +1,338 @@
+.myWork {
+  width: 100%;
+  background-color: #1c46f5;
+}
+
+.header {
+  width: 100%;
+  height: 30vh;
+  background-repeat: no-repeat;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 300px 300px 0 0;
+}
+
+.see {
+  background-color: #1c46f5;
+  padding: 34px;
+  padding-top: 82px;
+  border-radius: 0 0 300px 300px;
+}
+
+.header h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: clamp(40px, 7vw, 100px);
+  color: #1c46f5;
+  text-align: center;
+}
+
+/* ── Content row ──────────────────────────────────── */
+.content {
+  width: 100%;
+  height: 560px;
+  background-color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Arrows ───────────────────────────────────────── */
+.arrowLeft,
+.arrowRight {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  padding: 0;
+  margin: 0 16px;
+  opacity: 0.6;
+  transition: all 0.2s;
+}
+
+.arrowLeft:hover,
+.arrowRight:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.arrowLeft img,
+.arrowRight img {
+  width: 60px;
+  height: 60px;
+}
+
+.arrowFlipped {
+  transform: scaleX(-1);
+}
+
+/* ── Mockup carousel ──────────────────────────────── */
+.mockupCarousel {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.mockupSlide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mockupSlide img {
+  max-height: 80%;
+  max-width: 90%;
+  object-fit: contain;
+}
+
+.mockupPlaceholder {
+  width: 80%;
+  height: 60%;
+  border-radius: 16px;
+  background-color: #f0f0f0;
+}
+
+/* ── Text carousel ────────────────────────────────── */
+.textCarousel {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.textSlide {
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.projectTitle {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: clamp(22px, 3vw, 48px);
+  color: #00182e;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.projectTitle:hover {
+  color: #1c46f5;
+}
+
+.projectStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.projectStack li {
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  background-color: #00182e;
+  color: #acec00;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+/* ── Action buttons ───────────────────────────────── */
+.projectActions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btnPrimary {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  background-color: #1c46f5;
+  color: white;
+  text-decoration: none;
+  padding: 10px 22px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  transition:
+    transform 0.2s,
+    background-color 0.2s;
+}
+
+.btnPrimary:hover {
+  background-color: #0f2ecc;
+  transform: scale(1.05);
+}
+
+.btnSecondary {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  background-color: transparent;
+  color: #00182e;
+  text-decoration: none;
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: 2px solid #00182e;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  transition:
+    transform 0.2s,
+    background-color 0.2s,
+    color 0.2s;
+}
+
+.btnSecondary:hover {
+  background-color: #00182e;
+  color: white;
+  transform: scale(1.05);
+}
+
+.projectDesc {
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  font-size: clamp(14px, 1.4vw, 20px);
+  line-height: 1.7;
+  color: #333;
+}
+
+/* ── Dots ─────────────────────────────────────────── */
+.dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ccc;
+  cursor: pointer;
+  padding: 0;
+  transition:
+    background-color 0.2s,
+    transform 0.2s;
+}
+
+.dotActive {
+  background-color: #acec00;
+  transform: scale(1.3);
+}
+
+/* ── 1024px ──────────────────────────────────── */
+@media (max-width: 1024px) {
+  .arrowLeft,
+  .arrowRight {
+    margin: 0 8px;
+    width: 44px;
+    height: 44px;
+  }
+
+  .arrowLeft img,
+  .arrowRight img {
+    width: 44px;
+    height: 44px;
+  }
+
+  .see {
+    padding: 26px;
+    padding-top: 62px;
+  }
+}
+
+/* ── 768px ────────────────────────────────────── */
+@media (max-width: 768px) {
+  .myWork {
+    height: auto;
+  }
+
+  .header {
+    height: 20vh;
+    min-height: 120px;
+    border-radius: 120px 120px 0 0;
+  }
+
+  .see {
+    padding: 20px;
+    padding-top: 32px;
+  }
+
+  .content {
+    height: auto;
+    flex-direction: column;
+    padding: 32px 0;
+  }
+
+  .mockupCarousel {
+    width: 100%;
+    height: 280px;
+    flex: none;
+  }
+
+  .textCarousel {
+    width: 100%;
+    flex: none;
+    padding: 0 24px 24px;
+  }
+
+  .arrowLeft,
+  .arrowRight {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+  }
+
+  .arrowLeft {
+    left: 8px;
+  }
+
+  .arrowRight {
+    right: 8px;
+  }
+}
+
+/* ── 480px ──────────────────────────────────────── */
+@media (max-width: 480px) {
+  .header {
+    border-radius: 60px 60px 0 0;
+  }
+
+  .mockupCarousel {
+    height: 220px;
+  }
+
+  .textSlide {
+    gap: 12px;
+  }
+}

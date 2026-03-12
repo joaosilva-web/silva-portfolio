@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: #acec00;
+  color: #00182e;
+}
+
+/* Hide default cursor on pointer devices */
+@media (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+}

@@ -1,0 +1,221 @@
+.process {
+  width: 100%;
+  background-color: #1c46f5;
+  padding: 100px 0;
+}
+
+.inner {
+  margin: 0 64px;
+}
+
+/* ── Heading ─────────────────────────────────────── */
+.heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 80px;
+  gap: 32px;
+}
+
+.heading h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: clamp(48px, 7vw, 100px);
+  color: white;
+  line-height: 0.95;
+  flex-shrink: 0;
+}
+
+.highlight {
+  color: #acec00;
+}
+
+.subtitle {
+  font-family: "Playfair Display", serif;
+  font-weight: 300;
+  font-size: clamp(16px, 1.4vw, 20px);
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 360px;
+  line-height: 1.7;
+  text-align: right;
+}
+
+/* ── Steps grid ──────────────────────────────────── */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+}
+
+/* Horizontal connector line behind all steps */
+.connectorLine {
+  position: absolute;
+  top: 38px;
+  left: 24px;
+  right: 24px;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.25);
+  z-index: 0;
+  transform-origin: left center;
+}
+
+.step {
+  position: relative;
+  padding: 0 32px 0 0;
+  z-index: 1;
+}
+
+.stepNumber {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: clamp(48px, 5vw, 80px);
+  color: #acec00;
+  line-height: 1;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Ghost outline number in background */
+.step::before {
+  content: attr(data-number);
+  position: absolute;
+  top: -24px;
+  left: -8px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 140px;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.18);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.stepLine {
+  width: 48px;
+  height: 4px;
+  background-color: #acec00;
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+
+.stepTitle {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: clamp(18px, 1.8vw, 26px);
+  color: white;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.stepIcon {
+  display: flex;
+  align-items: center;
+  color: #acec00;
+}
+
+.stepDesc {
+  font-family: "Playfair Display", serif;
+  font-weight: 300;
+  font-size: clamp(14px, 1.2vw, 17px);
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.75;
+}
+
+/* Arrow connector between steps */
+.connector {
+  position: absolute;
+  top: 32px;
+  right: -12px;
+  width: 24px;
+  height: 24px;
+  border-top: 3px solid #acec00;
+  border-right: 3px solid #acec00;
+  transform: rotate(45deg);
+  z-index: 1;
+}
+
+/* ── 1024px ──────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .inner {
+    margin: 0 40px;
+  }
+
+  .step {
+    padding: 0 20px 0 0;
+  }
+
+  .connector {
+    right: -8px;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* ── 768px ───────────────────────────────────────── */
+@media (max-width: 768px) {
+  .process {
+    padding: 64px 0;
+  }
+
+  .connectorLine {
+    display: none;
+  }
+
+  .inner {
+    margin: 0 28px;
+  }
+
+  .heading {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 48px;
+    gap: 16px;
+  }
+
+  .subtitle {
+    text-align: left;
+    max-width: 100%;
+  }
+
+  .steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px 24px;
+  }
+
+  .connector {
+    display: none;
+  }
+
+  .step {
+    padding: 0;
+  }
+}
+
+/* ── 480px ───────────────────────────────────────── */
+@media (max-width: 480px) {
+  .process {
+    padding: 48px 0;
+  }
+
+  .inner {
+    margin: 0 16px;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .step::before {
+    font-size: 80px;
+    top: -12px;
+  }
+}
