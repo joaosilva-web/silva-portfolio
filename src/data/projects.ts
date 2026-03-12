@@ -32,7 +32,7 @@ export const projects: Project[] = [
     title: "FlashLearn",
     description:
       "FlashLearn is a smart flashcard platform that helps students learn more efficiently using spaced repetition.",
-    link: "https://flashlearn.app",
+    link: "https://flashcards-peach-five.vercel.app/",
     github: "https://github.com/",
     stack: ["TypeScript", "Next.js", "Supabase", "Tailwind CSS"],
     mockup: flashLearnImg,
