@@ -1,4 +1,4 @@
-import img from "../assets/mockup.png";
+// import img from "../assets/mockup.png";
 import tolivreImg from "../assets/mockup-tolivre.png";
 import flashLearnImg from "../assets/mockup-flashlearn.png";
 
