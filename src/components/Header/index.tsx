@@ -1,30 +1,35 @@
 import { useEffect, useState } from "react";
 import styles from "./Header.module.css";
+import { translations } from "../../data/translations";
+import type { Lang } from "../../data/translations";
 
 interface HeaderProps {
   theme: "light" | "dark";
   onToggleTheme: () => void;
+  lang: Lang;
+  onToggleLang: () => void;
 }
 
-const navLinks = [
-  { id: "about", label: "About" },
-  { id: "process", label: "Process" },
-  { id: "work", label: "Work" },
-  { id: "contact", label: "Contact" },
-];
+const navIds = ["about", "process", "work", "contact"];
 
-export default function Header({ theme, onToggleTheme }: HeaderProps) {
+export default function Header({
+  theme,
+  onToggleTheme,
+  lang,
+  onToggleLang,
+}: HeaderProps) {
   const [active, setActive] = useState("");
   const [scrolled, setScrolled] = useState(false);
+  const t = translations[lang];
 
   useEffect(() => {
     function onScroll() {
       setScrolled(window.scrollY > 60);
       let curr = "";
-      for (const link of navLinks) {
-        const el = document.getElementById(link.id);
+      for (const id of navIds) {
+        const el = document.getElementById(id);
         if (el && el.getBoundingClientRect().top <= 120) {
-          curr = link.id;
+          curr = id;
         }
       }
       setActive(curr);
@@ -52,13 +57,13 @@ export default function Header({ theme, onToggleTheme }: HeaderProps) {
           </a>
         </h1>
         <nav className={styles.nav}>
-          {navLinks.map((link) => (
+          {navIds.map((id, i) => (
             <button
-              key={link.id}
-              className={`${styles.navLink} ${active === link.id ? styles.active : ""}`}
-              onClick={() => goTo(link.id)}
+              key={id}
+              className={`${styles.navLink} ${active === id ? styles.active : ""}`}
+              onClick={() => goTo(id)}
             >
-              {link.label}
+              {t.nav[i]}
             </button>
           ))}
           <button
@@ -70,8 +75,17 @@ export default function Header({ theme, onToggleTheme }: HeaderProps) {
           >
             {theme === "light" ? "🌛" : "🌞"}
           </button>
+          <button
+            className={styles.langToggle}
+            onClick={onToggleLang}
+            aria-label={
+              lang === "en" ? "Mudar para português" : "Switch to English"
+            }
+          >
+            {lang === "en" ? "PT" : "EN"}
+          </button>
           <button className={styles.hireBtn} onClick={() => goTo("contact")}>
-            Hire Me
+            {t.hireMe}
           </button>
         </nav>
       </div>

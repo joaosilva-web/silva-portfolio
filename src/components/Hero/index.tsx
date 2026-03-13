@@ -3,10 +3,13 @@ import styles from "./Hero.module.css";
 import joaoPretoBranco from "../../assets/joao-preto-branco.png";
 import joaoBlack from "../../assets/joao-black.png";
 import { easing } from "../../lib/motionVariants";
+import { translations } from "../../data/translations";
+import type { Lang } from "../../data/translations";
 
 const vp = { amount: 0 as const };
 
-export default function Hero() {
+export default function Hero({ lang }: { lang: Lang }) {
+  const t = translations[lang];
   const { scrollY } = useScroll();
   const parallaxY = useTransform(scrollY, [0, 600], [0, -40]);
   const slimeY = useTransform(scrollY, [0, 800], [0, 90]);
@@ -77,7 +80,7 @@ export default function Hero() {
             ?.scrollIntoView({ behavior: "smooth" })
         }
       >
-        Hire Me
+        {t.hireMe}
       </motion.button>
 
       <div className={styles.bottomTexts}>
@@ -88,7 +91,7 @@ export default function Hero() {
             viewport={vp}
             transition={{ delay: 0.7, duration: 0.7, ease: easing }}
           >
-            specialized in web applications, UI/UX and problem solving
+            {t.hero.sub1}
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 12 }}
@@ -96,7 +99,7 @@ export default function Hero() {
             viewport={vp}
             transition={{ delay: 1.1, duration: 0.7, ease: easing }}
           >
-            build web applications that solve real business problems.
+            {t.hero.sub2}
           </motion.p>
         </div>
       </div>

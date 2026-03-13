@@ -354,3 +354,8 @@
     gap: 12px;
   }
 }
+
+/* ── Portuguese font-size overrides ─────────────── */
+:global([data-lang="pt"]) .header h2 {
+  font-size: clamp(24px, 4vw, 60px);
+}

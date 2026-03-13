@@ -4,6 +4,8 @@ import styles from "./MyWork.module.css";
 import arrowLeft from "../../assets/arrow-left.svg";
 import { projects } from "../../data/projects";
 import { fadeUp, staggerContainer, easing } from "../../lib/motionVariants";
+import { translations } from "../../data/translations";
+import type { Lang } from "../../data/translations";
 
 const textSlideVariants = {
   enter: (dir: "left" | "right") => ({
@@ -39,9 +41,10 @@ const mockupSlideVariants = {
   }),
 };
 
-export default function MyWork() {
+export default function MyWork({ lang }: { lang: Lang }) {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState<"left" | "right">("right");
+  const t = translations[lang];
 
   function prev() {
     setDirection("left");
@@ -71,7 +74,8 @@ export default function MyWork() {
     >
       <motion.div className={styles.header} variants={fadeUp}>
         <h2>
-          <span className={styles.see}>SEE</span> MY WORK 🫣
+          <span className={styles.see}>{t.work.seeWord}</span>{" "}
+          {t.work.titleRest}
         </h2>
       </motion.div>
 
@@ -125,7 +129,9 @@ export default function MyWork() {
               >
                 {project.title}
               </a>
-              <p className={styles.projectDesc}>{project.description}</p>
+              <p className={styles.projectDesc}>
+                {t.projects[current]?.description ?? project.description}
+              </p>
               <ul className={styles.projectStack}>
                 {project.stack.map((tech) => (
                   <li key={tech}>{tech}</li>
@@ -152,7 +158,7 @@ export default function MyWork() {
                     <polyline points="15 3 21 3 21 9" />
                     <line x1="10" y1="14" x2="21" y2="3" />
                   </svg>
-                  View Project
+                  {t.work.viewProject}
                 </a>
                 <a
                   href={project.github}

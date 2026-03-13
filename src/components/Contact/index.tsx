@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import styles from "./Contact.module.css";
 import { fadeUp, staggerContainer } from "../../lib/motionVariants";
+import { translations } from "../../data/translations";
+import type { Lang } from "../../data/translations";
 
-export default function Contact() {
+export default function Contact({ lang }: { lang: Lang }) {
+  const t = translations[lang];
   return (
     <motion.section
       className={styles.contact}
@@ -15,12 +18,11 @@ export default function Contact() {
       <div className={styles.inner}>
         <div className={styles.textBlock}>
           <motion.h2 variants={fadeUp}>
-            LET<span className={styles.apostrophe}>'</span>S{" "}
-            <span className={styles.highlight}>TALK 😍</span>
+            {t.contact.title}{" "}
+            <span className={styles.highlight}>{t.contact.titleHighlight}</span>
           </motion.h2>
           <motion.p className={styles.subtitle} variants={fadeUp}>
-            Have a project in mind or just want to say hello?{" "}
-            <em>I'd love to hear from you.</em>
+            {t.contact.subtitle}
           </motion.p>
         </div>
 

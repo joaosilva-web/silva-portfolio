@@ -3,8 +3,11 @@ import Card from "../Card";
 import styles from "./AboutService.module.css";
 import { services } from "../../data/services";
 import { fadeUp, staggerContainer } from "../../lib/motionVariants";
+import { translations } from "../../data/translations";
+import type { Lang } from "../../data/translations";
 
-export default function AboutService() {
+export default function AboutService({ lang }: { lang: Lang }) {
+  const t = translations[lang];
   return (
     <motion.section
       className={styles.aboutService}
@@ -18,15 +21,12 @@ export default function AboutService() {
         <div className={styles.header}>
           <motion.div variants={fadeUp}>
             <h2>
-              <span>ALL</span> YOUR🤩
+              <span>{t.about.titleAccent}</span>
             </h2>
-            <h2 className={styles.playfair}>project needs</h2>
+            <h2 className={styles.playfair}>{t.about.titleMain}</h2>
           </motion.div>
           <motion.div variants={fadeUp}>
-            <p className={styles.playfair}>
-              Everything your project needs in one place with the assurance of
-              highest excellence and usability
-            </p>
+            <p className={styles.playfair}>{t.about.description}</p>
             <button className={styles.ctaBtn}>
               <svg
                 width="14"
@@ -43,17 +43,17 @@ export default function AboutService() {
                 <line x1="8" y1="2" x2="8" y2="6" />
                 <line x1="3" y1="10" x2="21" y2="10" />
               </svg>
-              Book a Call
+              {t.about.bookCall}
             </button>
           </motion.div>
         </div>
         <div className={styles.cardsWrapper}>
-          {services.map((s) => (
+          {services.map((s, i) => (
             <Card
-              key={s.text}
+              key={s.icon}
               icon={<span>{s.icon}</span>}
-              iconLabel={s.label}
-              text={s.text}
+              iconLabel={t.about.services[i]}
+              text={t.about.services[i]}
             />
           ))}
         </div>

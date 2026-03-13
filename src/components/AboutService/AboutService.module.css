@@ -48,7 +48,7 @@
   cursor: pointer;
   background-color: var(--btn-bg);
   color: var(--btn-text);
-  border: 2px solid var(--btn-bg);
+  border: 2px solid white;
   padding: 10px 22px;
   border-radius: 999px;
   display: inline-flex;
@@ -62,8 +62,9 @@
 }
 
 .ctaBtn:hover {
-  background-color: transparent;
-  color: var(--btn-bg);
+  background-color: white;
+  color: var(--bg-accent);
+  border-color: white;
   transform: scale(1.05);
 }
 
@@ -118,4 +119,20 @@
   .cardsWrapper {
     flex-direction: column;
   }
+}
+
+/* ── Portuguese font-size overrides ─────────────── */
+:global([data-lang="pt"]) .aboutService h2 {
+  font-size: clamp(28px, 5vw, 72px);
+}
+
+/* ── Dark mode overrides ─────────────────────────── */
+:global([data-theme="dark"]) .ctaBtn {
+  border-color: var(--btn-bg);
+}
+
+:global([data-theme="dark"]) .ctaBtn:hover {
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border-color: var(--btn-bg);
 }

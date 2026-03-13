@@ -2,39 +2,25 @@ import { motion } from "framer-motion";
 import { Search, Brush, Code2, Rocket } from "lucide-react";
 import styles from "./Process.module.css";
 import { fadeUp, staggerContainer, easing } from "../../lib/motionVariants";
+import { translations } from "../../data/translations";
+import type { Lang } from "../../data/translations";
 
-const steps = [
-  {
-    number: "01",
-    icon: <Search size={20} strokeWidth={2.5} />,
-    title: "Discovery",
-    description:
-      "We align on goals, audience, and scope. I ask the right questions so nothing gets built in the dark.",
-  },
-  {
-    number: "02",
-    icon: <Brush size={20} strokeWidth={2.5} />,
-    title: "Design",
-    description:
-      "From wireframes to high-fidelity prototypes — every pixel is intentional, every flow is tested.",
-  },
-  {
-    number: "03",
-    icon: <Code2 size={20} strokeWidth={2.5} />,
-    title: "Development",
-    description:
-      "Clean, performant code. I build with the stack that best fits the project, always with quality first.",
-  },
-  {
-    number: "04",
-    icon: <Rocket size={20} strokeWidth={2.5} />,
-    title: "Launch",
-    description:
-      "Deploy, handoff, and support. I make sure you go live with confidence and everything working.",
-  },
+const stepIcons = [
+  <Search size={20} strokeWidth={2.5} />,
+  <Brush size={20} strokeWidth={2.5} />,
+  <Code2 size={20} strokeWidth={2.5} />,
+  <Rocket size={20} strokeWidth={2.5} />,
 ];
+const stepNumbers = ["01", "02", "03", "04"];
 
-export default function Process() {
+export default function Process({ lang }: { lang: Lang }) {
+  const t = translations[lang];
+  const steps = t.process.steps.map((s, i) => ({
+    number: stepNumbers[i],
+    icon: stepIcons[i],
+    title: s.title,
+    description: s.description,
+  }));
   return (
     <motion.section
       className={styles.process}
@@ -47,11 +33,11 @@ export default function Process() {
       <div className={styles.inner}>
         <div className={styles.heading}>
           <motion.h2 variants={fadeUp}>
-            HOW I <span className={styles.highlight}>WORK 🤯</span>
+            {t.process.title}{" "}
+            <span className={styles.highlight}>{t.process.titleHighlight}</span>
           </motion.h2>
           <motion.p className={styles.subtitle} variants={fadeUp}>
-            A clear, collaborative process from the first conversation to the
-            final delivery.
+            {t.process.subtitle}
           </motion.p>
         </div>
 
