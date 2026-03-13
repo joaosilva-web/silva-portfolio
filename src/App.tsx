@@ -7,12 +7,14 @@ import Header from "./components/Header";
 import Hero from "./components/Hero/";
 import MyWork from "./components/MyWork";
 import Process from "./components/Process";
+import { useTheme } from "./hooks/useTheme";
 
 function App() {
+  const { theme, toggle } = useTheme();
   return (
     <>
       <Cursor />
-      <Header />
+      <Header theme={theme} onToggleTheme={toggle} />
       <Hero />
       <AboutService />
       <Process />

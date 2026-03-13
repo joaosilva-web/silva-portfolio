@@ -1,7 +1,47 @@
+/* ── Theme variables ─────────────────────────────── */
+:root {
+  --bg-accent: #1c46f5;
+  --bg-surface: #ffffff;
+  --bg-card: #ffffff;
+  --color-accent: #1c46f5;
+  --btn-bg: #1c46f5;
+  --btn-text: white;
+  --text-on-surface: #00182e;
+  --text-secondary: #333333;
+  --badge-bg: #00182e;
+  --badge-text: #acec00;
+  --footer-bg: #00182e;
+  --arrow-filter: none;
+  --card-shadow: rgba(0, 24, 46, 0.12);
+  --dot-inactive: #cccccc;
+}
+
+[data-theme="dark"] {
+  --bg-accent: #111f36;
+  --bg-surface: #0d1520;
+  --bg-card: #1e2d45;
+  --color-accent: #acec00;
+  --btn-bg: #acec00;
+  --btn-text: #00182e;
+  --text-on-surface: #e6edf3;
+  --text-secondary: rgba(230, 237, 243, 0.75);
+  --badge-bg: #acec00;
+  --badge-text: #00182e;
+  --footer-bg: #070d16;
+  --arrow-filter: brightness(0) invert(1);
+  --card-shadow: rgba(0, 0, 0, 0.4);
+  --dot-inactive: #2e3d52;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-surface);
+  transition: background-color 0.3s ease;
 }
 
 ::selection {

@@ -1,7 +1,7 @@
 .footer {
   width: 100%;
   height: 160px;
-  background-color: #00182e;
+  background-color: var(--footer-bg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,6 +9,7 @@
   overflow: hidden;
 
   border-top: #acec00 4px solid;
+  transition: background-color 0.3s ease;
 }
 
 .verse {

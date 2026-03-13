@@ -34,7 +34,8 @@
   display: flex;
   justify-content: flex-end;
 
-  color: #00182e;
+  color: var(--text-on-surface);
+  transition: color 0.3s ease;
 }
 
 .text h3 {
@@ -60,8 +61,9 @@
   font-size: clamp(52px, 13vw, 200px);
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
-  color: #1c46f5;
+  color: var(--color-accent);
   white-space: nowrap;
+  transition: color 0.3s ease;
 }
 
 .slime {
@@ -71,6 +73,10 @@
   height: 244px;
   background-image: url("../../assets/slime.svg");
   background-size: cover;
+}
+
+[data-theme="dark"] .slime {
+  background-image: url("../../assets/slime-dark.svg");
 }
 
 .cta {
@@ -84,16 +90,19 @@
   align-items: center;
   border: none;
   border-radius: 300px;
-  color: white;
+  color: var(--btn-text);
 
   font-family: "Montserrat", sans-serif;
   font-size: 24px;
   font-weight: 600;
   cursor: pointer;
-  background-color: #1c46f5;
+  background-color: var(--btn-bg);
   padding: 16px 32px;
 
   width: 268px;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .cta:hover::before {
@@ -144,7 +153,8 @@
   width: 400px;
   font-family: "Montserrat", sans-serif;
   font-size: 32px;
-  color: #00182e;
+  color: var(--text-on-surface);
+  transition: color 0.3s ease;
 }
 
 /* ── 1024px ─────────────────────────────────────────── */

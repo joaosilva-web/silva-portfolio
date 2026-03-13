@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import styles from "./Header.module.css";
 
+interface HeaderProps {
+  theme: "light" | "dark";
+  onToggleTheme: () => void;
+}
+
 const navLinks = [
   { id: "about", label: "About" },
   { id: "process", label: "Process" },
@@ -8,7 +13,7 @@ const navLinks = [
   { id: "contact", label: "Contact" },
 ];
 
-export default function Header() {
+export default function Header({ theme, onToggleTheme }: HeaderProps) {
   const [active, setActive] = useState("");
   const [scrolled, setScrolled] = useState(false);
 
@@ -56,6 +61,15 @@ export default function Header() {
               {link.label}
             </button>
           ))}
+          <button
+            className={styles.themeToggle}
+            onClick={onToggleTheme}
+            aria-label={
+              theme === "light" ? "Switch to dark mode" : "Switch to light mode"
+            }
+          >
+            {theme === "light" ? "🌛" : "🌞"}
+          </button>
           <button className={styles.hireBtn} onClick={() => goTo("contact")}>
             Hire Me
           </button>
