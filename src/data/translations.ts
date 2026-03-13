@@ -120,7 +120,7 @@ export const translations = {
         {
           title: "Lançamento",
           description:
-            "Deploy, entrega e suporte. Garanto que você vai ao ar com confiança e tudo funcionando.",
+            "Deploy, entrega e suporte. Garanto que o projeto vai ao ar com confiança e tudo funcionando.",
         },
       ],
     },
@@ -132,8 +132,7 @@ export const translations = {
     contact: {
       title: "VAMOS",
       titleHighlight: "CONVERSAR 😍",
-      subtitle:
-        "Tem um projeto em mente ou só quer um oi? Adoraria ouvir de você.",
+      subtitle: "Tem um projeto em mente ou só dar um oi? Adoraria ouvir você.",
     },
     footer: {
       verse: "No princípio era o Verbo — Jo 1:1",
