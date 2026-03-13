@@ -359,3 +359,8 @@
 :global([data-lang="pt"]) .header h2 {
   font-size: clamp(24px, 4vw, 60px);
 }
+
+/* ── Dark mode overrides ─────────────────────────── */
+:global([data-theme="dark"]) .see {
+  color: white;
+}
